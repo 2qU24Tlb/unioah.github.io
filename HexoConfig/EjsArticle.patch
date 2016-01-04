@@ -1,0 +1,12 @@
+21a22,27
+>         <% if (!index && post.toc !== false) { %>
+>          <div id="toc" class="toc-article">
+>              <strong class="toc-title">INDEX:</strong>
+>              <%- toc(post.content) %>
+>           </div>
+>          <% } %>
+44c50
+< <% } %>
+\ No newline at end of file
+---
+> <% } %>
