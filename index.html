@@ -1,1 +1,915 @@
-Under Construction
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Platform Nine and Three Quarters</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Platform Nine and Three Quarters">
+<meta property="og:url" content="http://unioah.me/index.html">
+<meta property="og:site_name" content="Platform Nine and Three Quarters">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Platform Nine and Three Quarters">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="Platform Nine and Three Quarters" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Platform Nine and Three Quarters</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://unioah.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-font-in-linux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/29/font-in-linux/" class="article-date">
+  <time datetime="2015-11-30T05:17:12.000Z" itemprop="datePublished">2015-11-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/29/font-in-linux/">Make fonts look better in Linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Install_Windows_Fonts"><a href="#Install_Windows_Fonts" class="headerlink" title="Install Windows Fonts"></a>Install Windows Fonts</h2><p>Some web pages are specified with certain fonts which may not available in Linux. Chrome uses its own fonts to minimize the differences. But in firefox, some pages will look ugly since there are no such fonts installed along with firefox. One way to solve this by installing windows fonts in Linux. See this <a href="https://wiki.archlinux.org/index.php/Microsoft_fonts" target="_blank" rel="external">tutorial</a> for detail.<br>But you still need a valid windows installation to get all fonts (and license). If you run into <strong>checksum error</strong> you can use <em>makepkg -g &gt;&gt; PKGBUILD</em> and <em>makepkg PKGBUILD</em> to generate hash yourself. (Thanks to <a href="https://aur.archlinux.org/pkgbase/ttf-ms-win10/?comments=all" target="_blank" rel="external">Mons1990</a>)</p>
+<h2 id="Install_Monaco_Font_For_Programming"><a href="#Install_Monaco_Font_For_Programming" class="headerlink" title="Install Monaco Font For Programming"></a>Install Monaco Font For Programming</h2><p>Personally, I like to use <a href="https://github.com/todylu/monaco.ttf" target="_blank" rel="external">Monaco</a> as the major font for displaying code. It looks pretty cool in console.</p>
+<h2 id="Install_Infinality_tools_to_imorve_freetype2"><a href="#Install_Infinality_tools_to_imorve_freetype2" class="headerlink" title="Install Infinality tools to imorve freetype2"></a>Install Infinality tools to imorve freetype2</h2><p><strong>The Infinality is a set of Freetype patches that try to provide an improved font rendering for Linux and allow easy customization. Using it, you can easily set the font style to emulate OSX or Windows.</strong><br>Here is the <a href="https://wiki.archlinux.org/index.php/Infinality" target="_blank" rel="external">tutorial</a> about how to install it in Arch Linux. Since it is not in office repository, first you need add an unofficial key locally and then add their repository into <em>pacman.conf</em>. See <strong>Installation</strong> segment for detail.</p>
+<h2 id="Disable_bitmap_fonts"><a href="#Disable_bitmap_fonts" class="headerlink" title="Disable bitmap fonts"></a>Disable bitmap fonts</h2><p>To disable bitmap fonts (which are sometimes used as fallbacks for missing fonts, causing text to be rendered pixelated), use 70-no-bitmaps.conf (which is not placed by fontconfig by default):<br><figure class="highlight"><table><tr><td class="code"><pre><span class="line"># cd /etc/fonts/conf.d&#10;# rm 70-yes-bitmaps.conf&#10;# ln -s ../conf.avail/70-no-bitmaps.conf</span><br></pre></td></tr></table></figure></p>
+<p>[Ref]<br><a href="https://wiki.archlinux.org/index.php/Font_configuration" target="_blank" rel="external">https://wiki.archlinux.org/index.php/Font_configuration</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://unioah.me/2015/11/29/font-in-linux/" data-id="ciiz9ca34000mpui6ij5eg7z1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fonts/">fonts</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-4-25-HDFS" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/25/2015-4-25-HDFS/" class="article-date">
+  <time datetime="2015-04-25T23:15:00.000Z" itemprop="datePublished">2015-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hadoop/">Hadoop</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/25/2015-4-25-HDFS/">HDFS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="merge_HDFS_files"><a href="#merge_HDFS_files" class="headerlink" title="merge HDFS files"></a>merge HDFS files</h1><blockquote>
+<p>bin/hadoop fs -getmerge /user/foo/demofiles merged.txt</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://unioah.me/2015/04/25/2015-4-25-HDFS/" data-id="ciiz9ca2t000epui6v3o6zh85" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-4-25-LINUX" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/25/2015-4-25-LINUX/" class="article-date">
+  <time datetime="2015-04-25T05:00:00.000Z" itemprop="datePublished">2015-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/25/2015-4-25-LINUX/">Linux Tricks</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Get_line_number_for_the_txt_file"><a href="#Get_line_number_for_the_txt_file" class="headerlink" title="Get line number for the txt file."></a>Get line number for the txt file.</h1><h2 id="command_3A_cat"><a href="#command_3A_cat" class="headerlink" title="command: cat"></a>command: cat</h2><p>  -n</p>
+<h2 id="command_3A_wc"><a href="#command_3A_wc" class="headerlink" title="command: wc"></a>command: wc</h2><p>print newline, word, and byte counts for each file.</p>
+<p>  -l </p>
+<h1 id="Split_the_txt_file"><a href="#Split_the_txt_file" class="headerlink" title="Split the txt file"></a>Split the txt file</h1><h2 id="command_3A_split"><a href="#command_3A_split" class="headerlink" title="command: split"></a>command: split</h2><p>  -l[line number] # How many lines in each split files.<br>  -d” “           # use a single space as the delimiter (cut uses TAB by default).</p>
+<p>split the file.txt, after splitting each file has at most 500 lines.<br>‘’’bash<br>split -l500 file.txt<br>‘’’</p>
+<h1 id="remove_columns_from_txt_file"><a href="#remove_columns_from_txt_file" class="headerlink" title="remove columns from txt file"></a>remove columns from txt file</h1><h2 id="command_3A_cut"><a href="#command_3A_cut" class="headerlink" title="command: cut"></a>command: cut</h2><p>remove sections from each line of files</p>
+<p>  -d “ “ # use a single space as the delimiter (cut uses TAB by default)<br>  -f     # specify fields to keep</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://unioah.me/2015/04/25/2015-4-25-LINUX/" data-id="ciiz9ca2q000bpui6ut1ewfrk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-4-9-scala" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/09/2015-4-9-scala/" class="article-date">
+  <time datetime="2015-04-09T22:45:32.000Z" itemprop="datePublished">2015-04-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/09/2015-4-9-scala/">scala part 1: overview</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Scala source code is intended to be compiled to Java bytecode, so that the resulting executable code runs on a Java virtual machine. Java libraries may be used directly in Scala code and vice versa (language interoperability). Like Java, Scala is object-oriented. Unlike Java, Scala has many features of functional programming languages like Scheme, Standard ML and Haskell, including currying, type inference, immutability, lazy evaluation, and pattern matching. It also has an advanced type system supporting algebraic data types, covariance and contravariance, higher-order types, and anonymous types. Other features of Scala not present in Java include operator overloading, optional parameters, named parameters, raw strings, and no checked exceptions. <a href="http://en.wikipedia.org/wiki/Scala_(programming_language)" target="_blank" rel="external">wiki</a></p>
+<p>In general, scala code should be compiled to java bytecode before execution. </p>
+<h2 id="Compile_3A"><a href="#Compile_3A" class="headerlink" title="Compile:"></a>Compile:</h2><pre><code>scalac    compile
+scala     run
+compile options:
+  -d            use different output directory.
+  -classpath    use different classpath.
+</code></pre><p>It would be convenient to use <a href="http://davidb.github.io/scala-maven-plugin/" target="_blank" rel="external">scala-maven-plugin</a> plugin to compile &amp; run scala program automatically.<br>Put the <a href="https://github.com/unioah/configs/blob/master/template/scala_maven.pom.xml" target="_blank" rel="external">maven-template</a> (rename to pom.xml) in the source code. </p>
+<pre><code>compile: mvn compile
+run: mvn scala:run -DmainClass=org.example.MyClass
+</code></pre><p><strong>file name should follow the name of main class.</strong></p>
+<p>Thanks to the scala shell, we can use alternatives ways to run scala code.</p>
+<h2 id="Run_a_spark_shell_3A"><a href="#Run_a_spark_shell_3A" class="headerlink" title="Run a spark shell:"></a>Run a spark shell:</h2><p>  Bash:  scala</p>
+<h2 id="Run_as_bash_script_3A"><a href="#Run_as_bash_script_3A" class="headerlink" title="Run as bash script:"></a>Run as bash script:</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="shebang">#!/bin/sh</span></span><br><span class="line"><span class="built_in">exec</span> scala <span class="string">"<span class="variable">$0</span>"</span> <span class="string">"<span class="variable">$@</span>"</span></span><br><span class="line">!<span class="comment">#</span></span><br><span class="line">object HelloWorld &#123;</span><br><span class="line">   def main(args: Array[String]) &#123;</span><br><span class="line">      println(<span class="string">"Hello, world! "</span> + args.toList)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">  HelloWorld.main(args)</span><br></pre></td></tr></table></figure>
+<h2 id="Coding_Style_3A"><a href="#Coding_Style_3A" class="headerlink" title="Coding Style:"></a>Coding Style:</h2><ul>
+<li>class name: initial letter should be in upper case.</li>
+<li>method: start with lowercase and after initial letter should be in uppercase.</li>
+<li>program file name: match the object name</li>
+</ul>
+<h2 id="References_3A"><a href="#References_3A" class="headerlink" title="References:"></a>References:</h2><p>1: <a href="http://www.tutorialspoint.com/scala" target="_blank" rel="external">http://www.tutorialspoint.com/scala</a><br>2: <a href="http://www.scala-lang.org/documentation/" target="_blank" rel="external">http://www.scala-lang.org/documentation/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://unioah.me/2015/04/09/2015-4-9-scala/" data-id="ciiz9ca2l0006pui64eeahncb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scala/">scala</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-5-10-scala2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/09/2015-5-10-scala2/" class="article-date">
+  <time datetime="2015-04-09T22:45:32.000Z" itemprop="datePublished">2015-04-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/09/2015-5-10-scala2/">scala</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Package_3A"><a href="#Package_3A" class="headerlink" title="Package:"></a>Package:</h2><ul>
+<li>import one package:<br>eg: package com.liftcode.stuff</li>
+<li>import all sub packages:<br>eg: import scala.xml</li>
+<li>import selected packages:<br>import scala.collection.immutable.{TreeMap, TreeSet}</li>
+<li>skip the scala prefix<br>import math._</li>
+<li>rename import class<br>import java.util.{HashMap =&gt; JavaHashMap}</li>
+<li>show the elapsed time for application<br>only available if extends App<br>$ scalac -Dscala.time </li>
+</ul>
+<h2 id="Identifiers_3A"><a href="#Identifiers_3A" class="headerlink" title="Identifiers:"></a>Identifiers:</h2><ul>
+<li>Alphanumeric:</li>
+<li>Operator:<br>&lt;- :range generator<br>eg. a &lt;- 1 to 10, a &lt;- 1 until 10<br>=&gt; :infered type</li>
+<li>Mixed:</li>
+</ul>
+<h2 id="Variable_Declation_3A"><a href="#Variable_Declation_3A" class="headerlink" title="Variable Declation:"></a>Variable Declation:</h2><ul>
+<li>var: mutable, can be changed.<br>eg. var myVar : String = “Foo”</li>
+<li>val: immutable, can’t be changed.<br>eg. val myVar : String = “Foo”</li>
+<li>multiple vars:<br>eg. val (myVar1: Int, myVar2: String) = Pair(40, “Foo”)</li>
+</ul>
+<h2 id="for_loop_with_filter_3A"><a href="#for_loop_with_filter_3A" class="headerlink" title="for loop with filter:"></a>for loop with filter:</h2><p>scala for loop allows to filter out some element using one or more if statements.<br>eg.<br>for( var x &lt;- List<br>  if condition1; if condition2…<br>  ){<br>  statement(s);<br>}</p>
+<h2 id="function_3A"><a href="#function_3A" class="headerlink" title="function:"></a>function:</h2><p>def functionName ([list of parameters]) : [return type]</p>
+<h1 id="Collections_3A__5B1_5D"><a href="#Collections_3A__5B1_5D" class="headerlink" title="Collections: [1]"></a>Collections: [1]</h1><p>Collections are containers. Those containers can be sequenced, linear sets like List, Tuple, Option, Map.<br>list: immutable, linked list. You cannot update it in place. There are mutable ordered sequence types as well, in scala.collection.mutable, such as Buffer types.[6]</p>
+<ul>
+<li>strict:</li>
+<li>laze: have elements that may not consume memory until they are accessed.</li>
+</ul>
+<h1 id="7B_7D_contains_a_sequence_of_expressions_and_the_result_is_also_an_expression"><a href="#7B_7D_contains_a_sequence_of_expressions_and_the_result_is_also_an_expression" class="headerlink" title="{} contains a sequence of expressions and the result is also an expression."></a>{} contains a sequence of expressions and the result is also an expression.</h1><h1 id="do_not_use_chained_assignments"><a href="#do_not_use_chained_assignments" class="headerlink" title="do not use chained assignments."></a>do not use chained assignments.</h1><h1 id="input__26amp_3B_output"><a href="#input__26amp_3B_output" class="headerlink" title="input &amp; output"></a>input &amp; output</h1><p>print, println, printf<br>readInt, readDouble, readByte, readBoolean, readChar, readLine</p>
+<h1 id="range_3A"><a href="#range_3A" class="headerlink" title="range:"></a>range:</h1><p>1 to 10: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10<br>1 until 10: 1, 2, 3, 4, 5, 6, 7, 8, 9</p>
+<h1 id="no_break_in_Scala"><a href="#no_break_in_Scala" class="headerlink" title="no break in Scala"></a>no break in Scala</h1><pre><code>1. use a Boolean control variable
+2. use nested functions, return from the middle of a function
+3. break method in the Breaks object
+</code></pre><h1 id="advance_for_loop"><a href="#advance_for_loop" class="headerlink" title="advance for loop"></a>advance for loop</h1><h2 id="nested_for_loop"><a href="#nested_for_loop" class="headerlink" title="nested for loop"></a>nested for loop</h2><p>for (i &lt;- 1 to 3; j &lt;- i to 3) println(i * 10 + j)</p>
+<blockquote>
+<blockquote>
+<p>11 12 13 22 23 33</p>
+</blockquote>
+</blockquote>
+<h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><p>for (i &lt;- 1 to 3; j &lt;- 1 to 3 if i != j) println(i * 10 + j) </p>
+<blockquote>
+<blockquote>
+<p>12 13 21 23 31 32</p>
+</blockquote>
+</blockquote>
+<h2 id="yield_collection"><a href="#yield_collection" class="headerlink" title="yield collection"></a>yield collection</h2><p>for (i &lt;- 1 to 10) yield i % 3</p>
+<blockquote>
+<blockquote>
+<p>Yields Vector(1, 2, 0, 1, 2, 0, 1, 2, 0, 1)</p>
+</blockquote>
+</blockquote>
+<h1 id="A_method_operates_on_an_object_2C_but_a_function_doesn_u2019t"><a href="#A_method_operates_on_an_object_2C_but_a_function_doesn_u2019t" class="headerlink" title="A method operates on an object, but a function doesn’t."></a>A method operates on an object, but a function doesn’t.</h1><h1 id="default_arguments_2C_named_arguments"><a href="#default_arguments_2C_named_arguments" class="headerlink" title="default arguments, named arguments"></a>default arguments, named arguments</h1><p>def decorate(str: String, Left: String = “[“, right: String = “]”) = left + str + right<br>named arguments need not be in the same order as the parameters. </p>
+<h1 id="Variable_Arguments"><a href="#Variable_Arguments" class="headerlink" title="Variable Arguments"></a>Variable Arguments</h1><p>def sum (args: Int*) = {<br>var result = 0<br>for (arg &lt;- args) result += args<br>result<br>}</p>
+<blockquote>
+<blockquote>
+<p>val s = sum(1, 4, 9, 16, 25)<br>val s = sum(1 to 5: _*)</p>
+</blockquote>
+</blockquote>
+<h1 id="procedure_3A_a_function_that_returns_no_value_28without__3D_29"><a href="#procedure_3A_a_function_that_returns_no_value_28without__3D_29" class="headerlink" title="procedure: a function that returns no value(without =)"></a>procedure: a function that returns no value(without =)</h1><h1 id="lazy_value"><a href="#lazy_value" class="headerlink" title="lazy value"></a>lazy value</h1><blockquote>
+<blockquote>
+<p>lazy val words = fromFile…<br>every time a lazy value is accessed, a method is called, whether the value has already been initialized.</p>
+</blockquote>
+</blockquote>
+<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><p>use an Array if the length is fixed and an ArrayBuffer if the length can vary<br>use () to access elements<br>use for (i &lt;- 0 until a.length) to traverse the elements<br>use for (elem &lt;- arr if ..) .. yield … to transform into a new array</p>
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h2 id="construct_a_mutable_Map"><a href="#construct_a_mutable_Map" class="headerlink" title="construct a mutable Map"></a>construct a mutable Map</h2><p>val scores = scala.collection.mutable.Map<a href="/">String, Int</a><br>+= (“Alice” -&gt; 10)<br>val AliceScore = scores(“Alice”)<br>scores.contains(“Bob”)</p>
+<h1 id="Tuple"><a href="#Tuple" class="headerlink" title="Tuple"></a>Tuple</h1><p>aggregates of values of different types.<br>val t = (1, “2”, True)<br>access its components with the methods _1, _2, _3, etc.<br>t._1<br><strong> component positions of a tuple start with 1, not 0 </strong></p>
+<h1 id="Zipping"><a href="#Zipping" class="headerlink" title="Zipping"></a>Zipping</h1><p>bundle together values so that they can be processed together.<br>val symbols = Array(“&lt;”, “-“, “&gt;”)<br>val counts = Array(2, 10, 2)<br>val pairs = symbols.zip(counts)</p>
+<blockquote>
+<blockquote>
+<p>Array((“&lt;”, 2), (“-“, 10), (“&gt;”, 2))</p>
+</blockquote>
+</blockquote>
+<h1 id="use__28_29_for_a_mutator_method__28a_method_that_changes_the_object_state_29"><a href="#use__28_29_for_a_mutator_method__28a_method_that_changes_the_object_state_29" class="headerlink" title="use () for a mutator method (a method that changes the object state)"></a>use () for a mutator method (a method that changes the object state)</h1><h1 id="drop__28_29_for_an_accessor_method__28a_method_that_does_not_change_the_object_state_29"><a href="#drop__28_29_for_an_accessor_method__28a_method_that_does_not_change_the_object_state_29" class="headerlink" title="drop () for an accessor method (a method that does not change the object state)"></a>drop () for an accessor method (a method that does not change the object state)</h1><h1 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h1><p>Class Person {<br>    var age = 0<br>    }<br>    val fred = new Person<br>Getter:<br>    fred.age<br>Setter:<br>    fred.age_=(21)<br><strong> Object Private: a method can access the private fields of all objects of its class. </strong><br>Auxiliary Constructor:<br>    Each auxiliary constructor must start with a call to a previously defined auxiliary constructor or the primary constructor.<br>    def this(name: String) {<br>    this()<br>    this.name = name<br>    }</p>
+<p>The Primary Constructor:</p>
+<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><p>use it when you need a class with a single instance.<br>like static methods or fields in other languages.<br>You cannot provide constructor parameters for object.</p>
+<h1 id="Packages_3A"><a href="#Packages_3A" class="headerlink" title="Packages:"></a>Packages:</h1><p>There is no enforce relationship between the directory of the source file and the package.</p>
+<h1 id="References_3A"><a href="#References_3A" class="headerlink" title="References:"></a>References:</h1><p>[1] <a href="http://www.tutorialspoint.com/scala/scala_collections.htm" target="_blank" rel="external">http://www.tutorialspoint.com/scala/scala_collections.htm</a><br>[2] <a href="http://www.scala-lang.org/old/node/166" target="_blank" rel="external">http://www.scala-lang.org/old/node/166</a><br>[3] <a href="http://davidb.github.io/scala-maven-plugin/index.html" target="_blank" rel="external">http://davidb.github.io/scala-maven-plugin/index.html</a><br>[4] <a href="http://www.scala-lang.org/old/node/345" target="_blank" rel="external">http://www.scala-lang.org/old/node/345</a><br>[5] <a href="http://www.artima.com/pins1ed/a-scalable-language.html" target="_blank" rel="external">http://www.artima.com/pins1ed/a-scalable-language.html</a><br>[6] <a href="http://stackoverflow.com/questions/5094314/how-to-replace-a-given-item-in-a-list" target="_blank" rel="external">http://stackoverflow.com/questions/5094314/how-to-replace-a-given-item-in-a-list</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://unioah.me/2015/04/09/2015-5-10-scala2/" data-id="ciiz9ca2b0003pui67hftakcl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scala/">scala</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-4-4-py-argparse" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/04/2015-4-4-py-argparse/" class="article-date">
+  <time datetime="2015-04-05T03:40:00.000Z" itemprop="datePublished">2015-04-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/04/2015-4-4-py-argparse/">Python argparse</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>There are two ways to handle parameters from command line in python. One is using C style function “getopt”, and the other is using argparse. The argparse module is more powerful and flexible.</p>
+<h2 id="Module_3A"><a href="#Module_3A" class="headerlink" title="Module:"></a>Module:</h2><p>import argparse</p>
+<h2 id="Initialization_3A"><a href="#Initialization_3A" class="headerlink" title="Initialization:"></a>Initialization:</h2><p>ArgumentParser():<br>return a parser with description. </p>
+<h2 id="Add_Arguments_3A"><a href="#Add_Arguments_3A" class="headerlink" title="Add Arguments:"></a>Add Arguments:</h2><p>add_argument()</p>
+<pre><code>- &apos;-shortname&apos;,
+- &apos;--longname&apos;,
+- action=&apos;store&apos;|&apos;store_true&apos;|&apos;store_False&apos;,
+  Save the value, after optionally converting it to a different type.
+- default=&apos;True|False&apos;,
+- dest=&quot;string&quot;,
+- help=&apos;string&apos;, 
+- type=dataType
+</code></pre><p>Store the argument value. if a type is provided, the value is converted to that type before it is stored. If the dest argument is provided, the value is saved to an attribute of that name on the Namespace object returned when the command line arguments are parsed.</p>
+<h2 id="Get_Result_3A"><a href="#Get_Result_3A" class="headerlink" title="Get Result:"></a>Get Result:</h2><p>parse_args():<br>get namespace result from parser. By default, the argument will get from argv[1:].</p>
+<p>eg.<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser(description=<span class="string">"sample"</span>)</span><br><span class="line"></span><br><span class="line">parser.add_argument(<span class="string">'-a'</span>, action=<span class="string">"store_true"</span>, default=<span class="keyword">False</span>)</span><br><span class="line">parser.add_argument(<span class="string">'-b'</span>, action=<span class="string">"store"</span>, dest=<span class="string">"b"</span>)</span><br><span class="line">parser.add_argument(<span class="string">'-c'</span>, action=<span class="string">"store"</span>, dest=<span class="string">"ctype"</span>, type=int)</span><br><span class="line"></span><br><span class="line">result =  parser.parse_args()</span><br><span class="line">print(result.a)</span><br><span class="line">print(result.b)</span><br><span class="line">print(result.ctype)</span><br></pre></td></tr></table></figure></p>
+<h2 id="5BReferences_5D_3A"><a href="#5BReferences_5D_3A" class="headerlink" title="[References]:"></a>[References]:</h2><ol>
+<li><a href="http://pymotw.com/2/argparse/" target="_blank" rel="external">http://pymotw.com/2/argparse/</a></li>
+<li><a href="https://docs.python.org/3.4/howto/argparse.html#id1" target="_blank" rel="external">https://docs.python.org/3.4/howto/argparse.html#id1</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://unioah.me/2015/04/04/2015-4-4-py-argparse/" data-id="ciiz9ca2n0008pui6hjf1dflu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-3-9-mapreduce" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/03/2015-3-9-mapreduce/" class="article-date">
+  <time datetime="2015-03-03T20:44:00.000Z" itemprop="datePublished">2015-03-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Big-Data/">Big Data</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/03/2015-3-9-mapreduce/">MapReduce</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>A MapReduce job usually splits the input data-set into independent chunks which are processed by the map tasks in a completely parallel manner.</p>
+<p>The MapReduce framework operates exclusively on <key, value=""> pairs, that is, the framework views the input to the job as a set of <key, value=""> pairs and produces a set of <key, value=""> pairs as the output of the job, conceivably of different types.</key,></key,></key,></p>
+<h1 id="Basic_Concepts_in_Hadoop_3A"><a href="#Basic_Concepts_in_Hadoop_3A" class="headerlink" title="Basic Concepts in Hadoop:"></a>Basic Concepts in Hadoop:</h1><p>[<a href="http://wiki.apache.org/hadoop/ImportantConcepts" target="_blank" rel="external">http://wiki.apache.org/hadoop/ImportantConcepts</a>]</p>
+<ul>
+<li><p>Hadoop:<br>Hadoop itself refers to the overall system that runs jobs, distributes tasks (pieces of these jobs) and stores data in a parallel and distributed fashion.</p>
+</li>
+<li><p>Map/reduce:<br><a href="http://wiki.apache.org/hadoop/HadoopMapReduce" target="_blank" rel="external">http://wiki.apache.org/hadoop/HadoopMapReduce</a><br>Is the style in which most programs running on Hadoop are written. In this style, input is broken in tiny pieces which are processed independently (the map part). The results of these independent processes are then collated into groups and processed as groups (the reduce part). Follow the link for a much more complete description.</p>
+</li>
+<li><p>HDFS - stands for Hadoop Distributed File System. This is how input and output files of Hadoop programs are normally stored. The major advantage of HDFS are that it provides very high input and output speeds. This is critical for good performance for highly parallel programs since as the number of processors involved in working on a problem increases, the overall demand for input data increases as does the overall rate that output is produced. HDFS provides very high bandwidth by storing chunks of files scattered throughout the Hadoop cluster. By clever choice of where individual tasks are run and because files are stored in multiple places, tasks are placed near their input data and output data is largely stored where it is created. An HDFS cluster is built from a NameNode and one or more DataNode instances.i</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://unioah.me/2015/03/03/2015-3-9-mapreduce/" data-id="ciiz9ca2x000hpui6f3atdr4j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-3-6-spark" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/02/2015-3-6-spark/" class="article-date">
+  <time datetime="2015-03-02T23:26:00.000Z" itemprop="datePublished">2015-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Big-Data/">Big Data</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/02/2015-3-6-spark/">SPARK</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="v-s_Hadoop_3A"><a href="#v-s_Hadoop_3A" class="headerlink" title="v.s Hadoop:"></a>v.s Hadoop:</h1><ul>
+<li>save intermediate results into memory without reading HDFS. Especially, it suits better for iterations.</li>
+<li>offer more flexible operations than hadoop, like flatMap, groupByKey, etc.</li>
+</ul>
+<h1 id="Resilient_Distributed_Datasets__28RDDs_29_3A"><a href="#Resilient_Distributed_Datasets__28RDDs_29_3A" class="headerlink" title="Resilient Distributed Datasets (RDDs):"></a>Resilient Distributed Datasets (RDDs):</h1><p>Represents an immutable, partitioned collection of elements that can be operated on in parallel. </p>
+<ul>
+<li>parallelizing an existing collection in the driver program. </li>
+<li>referencing a dataset in an external storage system.</li>
+</ul>
+<h2 id="RDD_Operations_3A_5B1_5D"><a href="#RDD_Operations_3A_5B1_5D" class="headerlink" title="RDD Operations:[1]"></a>RDD Operations:[1]</h2><ul>
+<li><p><strong>Transformations</strong>:<br>Create a new RDD from an existing one. It wouldn’t execute until there is a action like reduce.<br>eg. map is a transformation that passes each dataset element through a function and returns a new RDD representing the results.<br>list, map, flatMap, mapPartitions, mapPartitionswithindex, etc. </p>
+</li>
+<li><p><strong>Actions</strong><br>Real action in map reduce procedure.<br>List: reduce, collect, count, countByKey, foreach, etc.</p>
+</li>
+</ul>
+<h2 id="RDD_Persistence_3A"><a href="#RDD_Persistence_3A" class="headerlink" title="RDD Persistence:"></a>RDD Persistence:</h2><p>One of the most important capabilities in Spark is persisting (or caching) a dataset in memory across operations. </p>
+<h1 id="Shared_Variables_3A"><a href="#Shared_Variables_3A" class="headerlink" title="Shared Variables:"></a>Shared Variables:</h1><ul>
+<li><p>Broadcast Variables:<br>keep a read-only variable cached on each machine rather than shipping a copy of it with tasks. Should not be modified after it is broadcast in order to ensure that all nodes get the same value.</p>
+</li>
+<li><p>Accumulators:<br>variables that are only “added” to through an associative operation and can therefore be efficiently supported in parallel. </p>
+</li>
+</ul>
+<h1 id="Cluster_Mode_3A"><a href="#Cluster_Mode_3A" class="headerlink" title="Cluster Mode:"></a>Cluster Mode:</h1><p>SparkContext can connect to several types of cluster managers(standalone or Mesos/YARN).</p>
+<ol>
+<li>once connected, run excutors on nodes.</li>
+<li>send applications.</li>
+<li>send tasks.</li>
+</ol>
+<h1 id="Reference_3A"><a href="#Reference_3A" class="headerlink" title="Reference:"></a>Reference:</h1><p>[1] <a href="http://spark.apache.org/docs/latest/programming-guide.html" target="_blank" rel="external">http://spark.apache.org/docs/latest/programming-guide.html</a><br>[2] <a href="http://spark.apache.org/docs/1.2.0/cluster-overview.html" target="_blank" rel="external">http://spark.apache.org/docs/1.2.0/cluster-overview.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://unioah.me/2015/03/02/2015-3-6-spark/" data-id="ciiz9ca31000kpui6akf7fy4x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-1-24-JSON" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/24/2015-1-24-JSON/" class="article-date">
+  <time datetime="2015-01-25T05:00:00.000Z" itemprop="datePublished">2015-01-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/24/2015-1-24-JSON/">JSON Review</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Introduction_3A"><a href="#Introduction_3A" class="headerlink" title="Introduction:"></a>Introduction:</h1><p>JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate<a href="http://www.json.org/" target="_blank" rel="external">^json</a>. </p>
+<h1 id="Structures_3A"><a href="#Structures_3A" class="headerlink" title="Structures:"></a>Structures:</h1><ul>
+<li>name/value pairs</li>
+<li>ordered list of values</li>
+</ul>
+<ul>
+<li><p>object:</p>
+<ul>
+<li>{}</li>
+<li>{ members }</li>
+</ul>
+</li>
+<li><p>members</p>
+<ul>
+<li>pair</li>
+<li>pair , members</li>
+</ul>
+</li>
+<li><p>pair</p>
+<ul>
+<li>string : value</li>
+</ul>
+</li>
+<li><p>array</p>
+<ul>
+<li>[]</li>
+<li>[ elements ]</li>
+</ul>
+</li>
+<li><p>elements</p>
+<ul>
+<li>value</li>
+<li>value , elements</li>
+</ul>
+</li>
+<li><p>value</p>
+<ul>
+<li>string</li>
+<li>number</li>
+<li>object</li>
+<li>array</li>
+<li>true</li>
+<li>false</li>
+<li>null</li>
+</ul>
+</li>
+</ul>
+<h1 id="5BReferences_5D"><a href="#5BReferences_5D" class="headerlink" title="[References]"></a>[References]</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://unioah.me/2015/01/24/2015-1-24-JSON/" data-id="ciiz9ca3a000qpui651e4j1so" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-review" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/28/python-review/" class="article-date">
+  <time datetime="2014-12-28T22:05:04.000Z" itemprop="datePublished">2014-12-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/28/python-review/">python review</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Indentation:<br>Blocks of code are denoted by line indentation.<br>The triple quotes(‘’’ or ‘’’’’’) can be used to span the string across multiple lines, this is useful for some explanation like help.<br>The semicolon ( ; ) allows multiple statements on the single line.</p>
+<p>#Python has five standard data types:</p>
+<ul>
+<li><strong>numbers</strong><br>  eg. int, long, float, complex</li>
+<li><strong>string</strong><br>  eg. str=”123456”<br>  eg. str[2:5]</li>
+<li><strong>list</strong><br>  eg. list = [ ‘abcd’, 786 , 2.23, ‘john’, 70.2 ]</li>
+<li><strong>tuple</strong> (read-only lists)<br>  eg. tuple = (1927, ‘who’, ‘when’)</li>
+<li><strong>dictionary</strong><br>  eg. dict = {‘Name’: ‘Zara’, ‘Age’: 7, ‘Class’: ‘First’}</li>
+</ul>
+<p>#Python Basic Operators:</p>
+<ul>
+<li>Arithmetic Operators (+ - <em> / % *</em> //)</li>
+<li>Comparison Operators (== != &lt;&gt; &gt; &lt; &gt;= &lt;=)</li>
+<li>Assignment Operators (= += -= <em>= /= %= *</em>= //=)</li>
+<li>Bitwise Operators (&amp; | ^ ~ &lt;&lt; &gt;&gt;)</li>
+<li>Logical Operators (and or not)</li>
+<li>Membership Operators (in not in)</li>
+<li>Identity Operators (is is not)</li>
+</ul>
+<p>#references:</p>
+<ol>
+<li><a href="http://www.tutorialspoint.com/" target="_blank" rel="external">http://www.tutorialspoint.com/</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://unioah.me/2014/12/28/python-review/" data-id="ciiz9ca3d000tpui6yycfy4uu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/25/Hexo/" class="article-date">
+  <time datetime="2014-12-25T06:48:00.000Z" itemprop="datePublished">2014-12-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/25/Hexo/">Hexo Tips</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-cli -<span class="keyword">g</span></span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm <span class="keyword">install</span> #<span class="keyword">install</span> JS node packages</span><br><span class="line">hexo <span class="keyword">server</span></span></span><br></pre></td></tr></table></figure>
+<p>** if already installed hexo 2, first need to uninstall hexo(npm rm hexo -g).</p>
+<h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><h2 id="for_site_2C_in__config-yml_3A"><a href="#for_site_2C_in__config-yml_3A" class="headerlink" title="for site, in _config.yml:"></a>for site, in _config.yml:</h2><ul>
+<li><p>site:<br>  title: The title of the website.<br>  description: The description of the website.<br>  author: Author’s name.<br>  email: Author’s email.<br>  timezone: timezone(Canada/Central).<br>  url: The RUL of the website.</p>
+</li>
+<li><p>Directory:<br>  root: The root directory of the website.<br>  source_dir: Where to store the content.<br>  public_dir: Where the static site will be generated.<br>  default_category: “uncategorized”</p>
+</li>
+<li><p>writing:<br>  new_post_name: The filename format for new posts.<br>  per_page: The amount of the posts displayed on a single page. 0 disables pagination. </p>
+</li>
+<li><p>Deploy:<br>server:<br>  ip: ip address for the website<br>  port: the port for the website </p>
+</li>
+</ul>
+<h2 id="for_theme"><a href="#for_theme" class="headerlink" title="for theme"></a>for theme</h2><h1 id="Commands_3A"><a href="#Commands_3A" class="headerlink" title="Commands:"></a>Commands:</h1><p>init: initialize a website.<br>new(n): create a new article.<br>generage(g): generate the static files.<br>server(s): start a local server.(–silent with no output)<br>clean(c): clean the cache files(db.json) and generated files(public).</p>
+<h1 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h1><h2 id="MathJax_Renderer_5B1_5D"><a href="#MathJax_Renderer_5B1_5D" class="headerlink" title="MathJax Renderer[1]"></a>MathJax Renderer[1]</h2><h1 id="Toc"><a href="#Toc" class="headerlink" title="Toc"></a>Toc</h1><p><a href="http://kuangqi.me/tricks/enable-table-of-contents-on-hexo/" target="_blank" rel="external">http://kuangqi.me/tricks/enable-table-of-contents-on-hexo/</a></p>
+<p>[References]:<br>[1]<a href="https://github.com/phoenixcw/hexo-renderer-mathjax" target="_blank" rel="external">https://github.com/phoenixcw/hexo-renderer-mathjax</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://unioah.me/2014/12/25/Hexo/" data-id="ciiz9ca3g000vpui6hplzfoik" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-MarkdownReview" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/20/MarkdownReview/" class="article-date">
+  <time datetime="2014-12-21T04:16:30.000Z" itemprop="datePublished">2014-12-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/20/MarkdownReview/">Markdown Review</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Heading"><a href="#Heading" class="headerlink" title="Heading"></a>Heading</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="preprocessor">#heading level <span class="number">1</span></span></span><br><span class="line"><span class="preprocessor">##heading level <span class="number">2</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="Font_Style"><a href="#Font_Style" class="headerlink" title="Font Style"></a>Font Style</h2><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">*BOLD <span class="keyword">or</span> _BOLD</span><br><span class="line">**ITALIC <span class="keyword">or</span> __ITALIC</span><br><span class="line">~~strike <span class="keyword">through</span>~~</span><br></pre></td></tr></table></figure>
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">* or - <span class="keyword">for</span> unordered item <span class="number">1</span></span><br><span class="line"><span class="number">1.</span> ordered item <span class="number">1</span></span><br><span class="line">Nest <span class="built_in">list</span>:</span><br><span class="line">  <span class="number">1.</span> item <span class="number">1</span></span><br><span class="line">    * subitem <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h2 id="Code_Format"><a href="#Code_Format" class="headerlink" title="Code Format"></a>Code Format</h2><figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line">`<span class="javascript"> <span class="keyword">for</span> one line</span><br><span class="line"></span>``<span class="javascript"> </span>` <span class="keyword">for</span> multiple lines</span><br><span class="line">`<span class="javascript"></span>` `<span class="javascript">python <span class="keyword">for</span> Syntax highlighting</span></span><br></pre></td></tr></table></figure>
+<h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="link_label">My Web Site</span>](<span class="link_url">unioah.me</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Table"><a href="#Table" class="headerlink" title="Table"></a>Table</h2><figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line"><span class="keyword">First</span> Header  | Second Header</span><br><span class="line">------------- | -------------</span><br><span class="line">Content <span class="keyword">Cell</span>  | Content <span class="keyword">Cell</span></span><br><span class="line">Content <span class="keyword">Cell</span>  | Content <span class="keyword">Cell</span></span><br></pre></td></tr></table></figure>
+<h2 id="Emacs__26amp_3B_markdown"><a href="#Emacs__26amp_3B_markdown" class="headerlink" title="Emacs &amp; markdown"></a>Emacs &amp; markdown</h2><ol>
+<li>view: C-c C-c v</li>
+<li>compile: C-c C-c m</li>
+</ol>
+<h2 id="References_3A"><a href="#References_3A" class="headerlink" title="References:"></a>References:</h2><ol>
+<li><a href="https://help.github.com/categories/writing-on-github/" target="_blank" rel="external">Writing on Github</a></li>
+<li><a href="http://jgmaox.wordpress.com/2013/11/05/setup-markdown-in-emacs/" target="_blank" rel="external">setup markdown in emacs</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_61f013b80101eo21.html" target="_blank" rel="external">Emacs config</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://unioah.me/2014/12/20/MarkdownReview/" data-id="ciiz9ca200000pui6cluqx0xy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Big-Data/">Big Data</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hadoop/">Hadoop</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/fonts/">fonts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scala/">scala</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/fonts/" style="font-size: 10px;">fonts</a> <a href="/tags/scala/" style="font-size: 20px;">scala</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/11/29/font-in-linux/">Make fonts look better in Linux</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/25/2015-4-25-HDFS/">HDFS</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/25/2015-4-25-LINUX/">Linux Tricks</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/09/2015-4-9-scala/">scala part 1: overview</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/09/2015-5-10-scala2/">scala</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 unioah<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
