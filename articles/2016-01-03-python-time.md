@@ -37,8 +37,10 @@ Two different are used in time module.
 | strftime(struct_time) | convert struct_time to s specified tring reprensentation |
 
 ## calendar module:
+Get day information in a month.
 
 ## datetime module:
+To be continued...
 
 ### References:
 1. http://www.tutorialspoint.com/python/python_date_time.htm
